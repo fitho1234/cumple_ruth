@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feliz Cumpleaños, Amor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fceabb, #f8b500);
+            color: #5a2a00;
+            text-align: center;
+            padding: 40px;
+        }
+        input, button, textarea {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            width: 80%;
+            max-width: 400px;
+        }
+        button {
+            background-color: #d94e48;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #b43b37;
+        }
+        .mensaje {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(217, 78, 72, 0.5);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .corazon {
+            font-size: 48px;
+            color: #d94e48;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Feliz cumpleaños, amor mío 🎉</h1>
+    <p>Escribe tu nombre para recibir un mensaje especial 💌</p>
+
+    <input type="text" id="nombre" placeholder="Tu nombre aquí" />
+    <br />
+    <textarea id="detalle" rows="3" placeholder="Escribe algo especial para ti (opcional)"></textarea>
+    <br />
+    <button onclick="mostrarMensaje()">Recibir mi mensaje</button>
+
+    <div class="mensaje" id="mensaje" style="display:none;"></div>
+
+    <script>
+        function mostrarMensaje() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const detalle = document.getElementById('detalle').value.trim();
+
+            if (!nombre) {
+                alert('Por favor, escribe tu nombre 😊');
+                return;
+            }
+
+            let mensaje = `<h2>Feliz cumpleaños, ${nombre}!</h2>`;
+            mensaje += `<p>Hoy celebro cada instante contigo,</p>`;
+            mensaje += `<p>eres la razón de mi alegría y mi inspiración.</p>`;
+            
+            if (detalle) {
+                mensaje += `<p><em>“${detalle}”</em></p>`;
+            }
+
+            mensaje += `<div class="corazon">❤️</div>`;
+            mensaje += `<p>Te amo mucho, siempre a tu lado.</p>`;
+
+            const mensajeDiv = document.getElementById('mensaje');
+            mensajeDiv.innerHTML = mensaje;
+            mensajeDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
